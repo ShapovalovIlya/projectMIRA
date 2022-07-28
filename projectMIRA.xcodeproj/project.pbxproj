@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCB28930C950043ABA9 /* AppDelegate.swift */; };
 		864D8BCE28930C950043ABA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCD28930C950043ABA9 /* SceneDelegate.swift */; };
-		864D8BD028930C950043ABA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCF28930C950043ABA9 /* ViewController.swift */; };
-		864D8BD328930C950043ABA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864D8BD128930C950043ABA9 /* Main.storyboard */; };
 		864D8BD528930C990043ABA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864D8BD428930C990043ABA9 /* Assets.xcassets */; };
 		864D8BD828930C990043ABA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864D8BD628930C990043ABA9 /* LaunchScreen.storyboard */; };
 		864D8BE328930C990043ABA9 /* projectMIRATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BE228930C990043ABA9 /* projectMIRATests.swift */; };
 		864D8BED28930C990043ABA9 /* projectMIRAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BEC28930C990043ABA9 /* projectMIRAUITests.swift */; };
 		864D8BEF28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */; };
+		864D8BFE289317870043ABA9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFD289317870043ABA9 /* Board.swift */; };
+		864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		864D8BC828930C950043ABA9 /* projectMIRA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectMIRA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864D8BCB28930C950043ABA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		864D8BCD28930C950043ABA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		864D8BCF28930C950043ABA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		864D8BD228930C950043ABA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		864D8BD428930C990043ABA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		864D8BD728930C990043ABA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		864D8BD928930C990043ABA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,9 @@
 		864D8BE828930C990043ABA9 /* projectMIRAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectMIRAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		864D8BEC28930C990043ABA9 /* projectMIRAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectMIRAUITests.swift; sourceTree = "<group>"; };
 		864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectMIRAUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		864D8BFD289317870043ABA9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		864D8C0128931FB40043ABA9 /* projectMIRA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = projectMIRA.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +100,11 @@
 		864D8BCA28930C950043ABA9 /* projectMIRA */ = {
 			isa = PBXGroup;
 			children = (
+				864D8C0128931FB40043ABA9 /* projectMIRA.entitlements */,
 				864D8BCB28930C950043ABA9 /* AppDelegate.swift */,
 				864D8BCD28930C950043ABA9 /* SceneDelegate.swift */,
-				864D8BCF28930C950043ABA9 /* ViewController.swift */,
-				864D8BD128930C950043ABA9 /* Main.storyboard */,
+				864D8BFB289316F00043ABA9 /* Model */,
+				864D8BFC289317080043ABA9 /* View */,
 				864D8BD428930C990043ABA9 /* Assets.xcassets */,
 				864D8BD628930C990043ABA9 /* LaunchScreen.storyboard */,
 				864D8BD928930C990043ABA9 /* Info.plist */,
@@ -125,6 +127,22 @@
 				864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */,
 			);
 			path = projectMIRAUITests;
+			sourceTree = "<group>";
+		};
+		864D8BFB289316F00043ABA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				864D8BFD289317870043ABA9 /* Board.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		864D8BFC289317080043ABA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +251,6 @@
 			files = (
 				864D8BD828930C990043ABA9 /* LaunchScreen.storyboard in Resources */,
 				864D8BD528930C990043ABA9 /* Assets.xcassets in Resources */,
-				864D8BD328930C950043ABA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				864D8BD028930C950043ABA9 /* ViewController.swift in Sources */,
+				864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */,
 				864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */,
+				864D8BFE289317870043ABA9 /* Board.swift in Sources */,
 				864D8BCE28930C950043ABA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +315,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		864D8BD128930C950043ABA9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				864D8BD228930C950043ABA9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		864D8BD628930C990043ABA9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,14 +445,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = projectMIRA/projectMIRA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WQFD456R9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = projectMIRA/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,6 +463,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IliaByHimself.projectMIRA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,14 +475,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = projectMIRA/projectMIRA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WQFD456R9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = projectMIRA/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,6 +493,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IliaByHimself.projectMIRA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
