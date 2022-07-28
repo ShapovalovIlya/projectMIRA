@@ -16,6 +16,7 @@
 		864D8BEF28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */; };
 		864D8BFE289317870043ABA9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFD289317870043ABA9 /* Board.swift */; };
 		864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */; };
+		864D8C03289325080043ABA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 864D8C02289325080043ABA9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		864D8BFD289317870043ABA9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		864D8C0128931FB40043ABA9 /* projectMIRA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = projectMIRA.entitlements; sourceTree = "<group>"; };
+		864D8C02289325080043ABA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		864D8BBF28930C950043ABA9 = {
 			isa = PBXGroup;
 			children = (
+				864D8C02289325080043ABA9 /* README.md */,
 				864D8BCA28930C950043ABA9 /* projectMIRA */,
 				864D8BE128930C990043ABA9 /* projectMIRATests */,
 				864D8BEB28930C990043ABA9 /* projectMIRAUITests */,
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864D8C03289325080043ABA9 /* README.md in Resources */,
 				864D8BD828930C990043ABA9 /* LaunchScreen.storyboard in Resources */,
 				864D8BD528930C990043ABA9 /* Assets.xcassets in Resources */,
 			);
