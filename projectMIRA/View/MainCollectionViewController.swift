@@ -7,9 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class MainCollectionViewController: UICollectionViewController {
+final class MainCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +21,7 @@ class MainCollectionViewController: UICollectionViewController {
     //MARK: - Private Methods
     private func setupView() {
         collectionView.backgroundColor = .white
-        
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(BoardCollectionViewCell.self, forCellWithReuseIdentifier: K.BoardCollectionViewCellId)
     }
     
     
@@ -33,27 +30,26 @@ class MainCollectionViewController: UICollectionViewController {
 // MARK: UICollection View Data Source
 extension MainCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        // Configure the cell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.BoardCollectionViewCellId, for: indexPath) as! BoardCollectionViewCell
         return cell
     }
 }
 
 // MARK: UICollection View Delegate
 extension MainCollectionViewController {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        10
+    }
+    
     /*
      // Uncomment this method to specify if the specified item should be highlighted during tracking
      override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -87,4 +83,13 @@ extension MainCollectionViewController {
 //MARK: - UICollection View Delegate Flow Layout
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return edgeInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSize = CGSize(width: 320, height: 480)
+        return itemSize
+    }
 }
