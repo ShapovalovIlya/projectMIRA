@@ -10,4 +10,5 @@ import Foundation
 struct K {
     static let BoardCollectionViewCellId = "BoardCollectionViewCellIdentifier"
     static let BoardTableViewCellId = "BoardTableViewCellIdentifier"
+    static let BoardHeaderViewId = "BoardHeaderViewIdentifier"
 }
