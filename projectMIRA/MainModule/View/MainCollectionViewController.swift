@@ -31,7 +31,8 @@ final class MainCollectionViewController: UICollectionViewController {
             image: UIImage(systemName: "bell.circle"),
             style: .plain,
             target: self,
-            action: #selector(notificationTap))
+            action: #selector(notificationTap)
+        )
         
         navigationItem.rightBarButtonItem = notificationNavbar
     }

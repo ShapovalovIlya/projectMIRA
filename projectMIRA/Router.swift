@@ -13,8 +13,9 @@ protocol RouterMain {
 }
 
 protocol RouterProtocol: RouterMain {
+    func showWelcomeView()
     func showMainView()
-    func showNotifications()
+    func showNotificationsView()
     
 }
 
@@ -28,13 +29,19 @@ final class Router: RouterProtocol {
         self.assemblyBuilder = assemblyBuilder
     }
     
+    func showWelcomeView() {
+        guard let navigationController = navigationController else { return }
+        guard let welcomeViewController = assemblyBuilder?.createWelcomeScreen(router: self) else { return }
+        navigationController.viewControllers = [welcomeViewController]
+    }
+    
     func showMainView() {
         guard let navigationController = navigationController else { return }
         guard let mainViewController = assemblyBuilder?.createBoardScreen(router: self) else { return }
-        navigationController.viewControllers = [mainViewController]
+        navigationController.pushViewController(mainViewController, animated: true)
     }
     
-    func showNotifications() {
+    func showNotificationsView() {
         
     }
     
