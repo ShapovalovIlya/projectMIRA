@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86421CB22898354000EA5233 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB12898354000EA5233 /* AssemblyBuilder.swift */; };
+		86421CB42898356700EA5233 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB32898356700EA5233 /* Router.swift */; };
+		86421CB82898373700EA5233 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB72898373700EA5233 /* MainViewPresenter.swift */; };
 		864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCB28930C950043ABA9 /* AppDelegate.swift */; };
 		864D8BCE28930C950043ABA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCD28930C950043ABA9 /* SceneDelegate.swift */; };
 		864D8BD528930C990043ABA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864D8BD428930C990043ABA9 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86421CB12898354000EA5233 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
+		86421CB32898356700EA5233 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		86421CB72898373700EA5233 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		864D8BC828930C950043ABA9 /* projectMIRA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectMIRA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864D8BCB28930C950043ABA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		864D8BCD28930C950043ABA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86421CB52898363200EA5233 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				864D8BFB289316F00043ABA9 /* Model */,
+				864D8BFC289317080043ABA9 /* View */,
+				86421CB62898370B00EA5233 /* Presenter */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		86421CB62898370B00EA5233 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				86421CB72898373700EA5233 /* MainViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		86421CB92898430000EA5233 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				864D8C0828933C470043ABA9 /* Constants.swift */,
+				864D8BD428930C990043ABA9 /* Assets.xcassets */,
+				864D8BD628930C990043ABA9 /* LaunchScreen.storyboard */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		864D8BBF28930C950043ABA9 = {
 			isa = PBXGroup;
 			children = (
@@ -114,11 +148,10 @@
 				864D8C0128931FB40043ABA9 /* projectMIRA.entitlements */,
 				864D8BCB28930C950043ABA9 /* AppDelegate.swift */,
 				864D8BCD28930C950043ABA9 /* SceneDelegate.swift */,
-				864D8C0828933C470043ABA9 /* Constants.swift */,
-				864D8BFB289316F00043ABA9 /* Model */,
-				864D8BFC289317080043ABA9 /* View */,
-				864D8BD428930C990043ABA9 /* Assets.xcassets */,
-				864D8BD628930C990043ABA9 /* LaunchScreen.storyboard */,
+				86421CB12898354000EA5233 /* AssemblyBuilder.swift */,
+				86421CB32898356700EA5233 /* Router.swift */,
+				86421CB52898363200EA5233 /* MainModule */,
+				86421CB92898430000EA5233 /* Resourses */,
 				864D8BD928930C990043ABA9 /* Info.plist */,
 			);
 			path = projectMIRA;
@@ -152,10 +185,10 @@
 		864D8BFC289317080043ABA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */,
 				864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */,
 				864D8C0C289344230043ABA9 /* BoardHeaderView.swift */,
 				864D8C04289337A30043ABA9 /* BoardCollectionViewCell.swift */,
-				864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,10 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */,
+				86421CB82898373700EA5233 /* MainViewPresenter.swift in Sources */,
 				864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */,
+				86421CB42898356700EA5233 /* Router.swift in Sources */,
 				864D8C05289337A30043ABA9 /* BoardCollectionViewCell.swift in Sources */,
 				864D8BFE289317870043ABA9 /* Board.swift in Sources */,
 				864D8C0D289344230043ABA9 /* BoardHeaderView.swift in Sources */,
+				86421CB22898354000EA5233 /* AssemblyBuilder.swift in Sources */,
 				864D8C0928933C470043ABA9 /* Constants.swift in Sources */,
 				864D8C0728933C250043ABA9 /* BoardTableViewCell.swift in Sources */,
 				864D8BCE28930C950043ABA9 /* SceneDelegate.swift in Sources */,

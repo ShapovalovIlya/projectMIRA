@@ -9,12 +9,15 @@ import UIKit
 
 final class MainCollectionViewController: UICollectionViewController {
     
+    var presenter: MainViewPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         setupView()
+        setupNavigationBar()
     }
     
     //MARK: - Private Methods
@@ -23,6 +26,19 @@ final class MainCollectionViewController: UICollectionViewController {
         self.collectionView!.register(BoardCollectionViewCell.self, forCellWithReuseIdentifier: K.BoardCollectionViewCellId)
     }
     
+    private func setupNavigationBar() {
+        let notificationNavbar = UIBarButtonItem(
+            image: UIImage(systemName: "bell.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(notificationTap))
+        
+        navigationItem.rightBarButtonItem = notificationNavbar
+    }
+    
+    @objc private func notificationTap() {
+        
+    }
     
 }
 

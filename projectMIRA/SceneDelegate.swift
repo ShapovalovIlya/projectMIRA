@@ -17,18 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mainViewController = MainCollectionViewController(collectionViewLayout: setLayout())
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+        let navigationController = UINavigationController()
+        let assemblyBuilder = AssemblyBuilder()
+        let router = Router(navigationController: navigationController, assemblyBuilder: assemblyBuilder)
+        router.showMainView()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-    }
-    
-    private func setLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        return layout
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
