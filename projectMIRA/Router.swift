@@ -42,7 +42,11 @@ final class Router: RouterProtocol {
     }
     
     func showNotificationsView() {
-        
+        guard let navigationController = navigationController else { return }
+    }
+    
+    func showRegistrationView() {
+        guard let navigationController = navigationController else { return }
     }
     
 }

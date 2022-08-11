@@ -9,6 +9,7 @@ import Foundation
 
 protocol WelcomeViewPresenterProtocol {
     func login()
+    func registration()
 }
 
 class WelcomeViewPresenter: WelcomeViewPresenterProtocol {
@@ -20,6 +21,10 @@ class WelcomeViewPresenter: WelcomeViewPresenterProtocol {
     }
     
     func login() {
+        router?.showMainView()
+    }
+    
+    func registration() {
         router?.showMainView()
     }
     

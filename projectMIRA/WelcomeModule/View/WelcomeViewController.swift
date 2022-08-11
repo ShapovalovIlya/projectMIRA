@@ -15,8 +15,9 @@ class WelcomeViewController: UIViewController {
     //MARK: - Private properties
     private let welcomeLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 30)
         label.text = "Progect MIRA"
-        
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -24,6 +25,7 @@ class WelcomeViewController: UIViewController {
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Login"
+        
         textField.backgroundColor = .white
         
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +46,22 @@ class WelcomeViewController: UIViewController {
         button.tintColor = .white
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 10
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Registration", for: .normal)
+        button.tintColor = .systemBlue
+        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 10
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,36 +87,49 @@ class WelcomeViewController: UIViewController {
     }
     
 //MARK: - Private Methods
-    private func setupView() {
-        view.backgroundColor = .white
-        view.addSubview(welcomeLabel)
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
+    @objc private func loginButtonTapped() {
+        presenter.login()
     }
     
-    @objc private func loginButtonTapped() {
+    @objc private func registerButtonTapped() {
         presenter.login()
     }
 
 }
 
-//MARK: - Set Constraints
+//MARK: - Private Extension
 private extension WelcomeViewController {
+    
+    func setupView() {
+        view.backgroundColor = .lightGray
+        view.addSubview(welcomeLabel)
+        view.addSubview(loginTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
+    }
+    
     func setConstraints() {
         NSLayoutConstraint.activate([
-            // Login text field constraints
+            
             loginTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            // Welcome Label constraints
+            loginTextField.heightAnchor.constraint(equalToConstant: 40),
+            loginTextField.widthAnchor.constraint(equalToConstant: 200),
+            
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            welcomeLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -10),
-            // Password text field constraints
+            welcomeLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -view.frame.width / 6),
+            
             passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 10),
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            // Login button constraints
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 200),
+            
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
+            registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }
