@@ -19,13 +19,13 @@ final class BoardCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         setupView()
         setupNavigationBar()
-        updateCollextionView(with: view.bounds.size)
+        updateCollectionView(with: view.bounds.size)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        updateCollextionView(with: size)
+        updateCollectionView(with: size)
     }
     
     //MARK: - Private Methods
@@ -131,7 +131,7 @@ extension BoardCollectionViewController {
 extension BoardCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return edgeInsets
     }
     
@@ -150,7 +150,7 @@ private extension BoardCollectionViewController {
     
     func setupNavigationBar() {
         
-        let notificationNavbar = UIBarButtonItem(
+        let notificationButton = UIBarButtonItem(
             image: UIImage(systemName: "bell.circle"),
             style: .plain,
             target: self,
@@ -163,10 +163,10 @@ private extension BoardCollectionViewController {
             action: #selector(addListTapped)
         )
                 
-        navigationItem.rightBarButtonItems = [ notificationNavbar, addButtonItem]
+        navigationItem.rightBarButtonItems = [ notificationButton, addButtonItem]
     }
     
-    func updateCollextionView(with size: CGSize) {
+    func updateCollectionView(with size: CGSize) {
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         layout.itemSize = CGSize(width: 255, height: size.height * 0.8)
     }
