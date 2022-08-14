@@ -25,9 +25,7 @@ class WelcomeViewController: UIViewController {
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Login"
-        
         textField.backgroundColor = .white
-        
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -111,7 +109,6 @@ private extension WelcomeViewController {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            
             loginTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginTextField.heightAnchor.constraint(equalToConstant: 40),

@@ -9,6 +9,9 @@ import UIKit
 
 final class BoardCollectionViewCell: UICollectionViewCell {
     
+    weak var presenter: BoardViewPresenterProtocol?
+    var board: Board?
+    
     //MARK: - Private Properties
     private let tableView: UITableView = {
         let table = UITableView()
@@ -31,18 +34,28 @@ final class BoardCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Private methods
-    private func setupView() {
-        self.backgroundColor = .red
-        tableView.register(BoardTableViewCell.self, forCellReuseIdentifier: K.BoardTableViewCellId)
-        tableView.register(BoardHeaderView.self, forHeaderFooterViewReuseIdentifier: K.BoardHeaderViewId)
-        addSubview(tableView)
+    override class func awakeFromNib() {
+        super.awakeFromNib()
     }
     
-    private func setDelegates() {
-        tableView.delegate = self
-        tableView.dataSource = self
+    //MARK: - Public methods
+    func setup(with board: Board) {
+        self.board = board
+        tableView.reloadData()
     }
+    
+    //MARK: - Private methods
+    
+    
+}
+
+//MARK: - Board Collection View Cell Protocol
+extension BoardCollectionViewCell: BoardCollectionViewCellProtocol {
+    func addTableViewCell(at addedIndexPath: IndexPath) {
+        self.tableView.insertRows(at: [addedIndexPath], with: .automatic)
+        self.tableView.scrollToRow(at: addedIndexPath, at: .bottom, animated: true)
+    }
+    
     
 }
 
@@ -69,23 +82,49 @@ extension BoardCollectionViewCell: UITableViewDelegate {
 extension BoardCollectionViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return board?.items.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return board?.title ?? "Nothing"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.BoardTableViewCellId, for: indexPath) as! BoardTableViewCell
+        if let cellTitle = board?.items[indexPath.row] {
+            cell.setTitle(with: cellTitle)
+        }else{
+            cell.setTitle(with: "Coud't set title!")
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: K.BoardHeaderViewId) as! BoardHeaderView
+        header.presenter = presenter
         return header
     }
     
 }
 
-//MARK: - Set Constraints
+//MARK: - Private Extension
 private extension BoardCollectionViewCell {
+    func setupView() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 10
+        self.backgroundColor = .red
+        tableView.register(BoardTableViewCell.self, forCellReuseIdentifier: K.BoardTableViewCellId)
+        tableView.register(BoardHeaderView.self, forHeaderFooterViewReuseIdentifier: K.BoardHeaderViewId)
+        tableView.tableFooterView = UIView()
+        addSubview(tableView)
+    }
+    
+    func setDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     func setConstraints() {
         NSLayoutConstraint.activate([
         tableView.topAnchor.constraint(equalTo: topAnchor, constant: 0),

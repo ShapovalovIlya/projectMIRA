@@ -16,7 +16,8 @@ protocol RouterProtocol: RouterMain {
     func showWelcomeView()
     func showMainView()
     func showNotificationsView()
-    
+    func showAlert(_ alert: UIAlertController)
+    func popToRoot()
 }
 
 final class Router: RouterProtocol {
@@ -47,6 +48,16 @@ final class Router: RouterProtocol {
     
     func showRegistrationView() {
         guard let navigationController = navigationController else { return }
+    }
+    
+    func showAlert(_ alert: UIAlertController) {
+        guard let navigationController = navigationController else { return }
+        navigationController.present(alert, animated: true)
+    }
+    
+    func popToRoot() {
+        guard let navigationController = navigationController else { return }
+        navigationController.popToRootViewController(animated: true)
     }
     
 }
