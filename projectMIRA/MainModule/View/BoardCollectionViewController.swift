@@ -83,9 +83,9 @@ extension BoardCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.BoardCollectionViewCellId, for: indexPath) as! BoardCollectionViewCell
-        let board = presenter.getBoard(withIndex: indexPath.item)
+        let boardIndex = indexPath.item
         cell.presenter = presenter
-        cell.setup(with: board)
+        cell.setup(with: boardIndex)
         return cell
     }
 }

@@ -16,7 +16,6 @@ final class BoardCollectionViewCell: UICollectionViewCell {
     private let tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .systemBlue
-        
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -39,8 +38,8 @@ final class BoardCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - Public methods
-    func setup(with board: Board) {
-        self.board = board
+    func setup(with boardIndex: Int) {
+        self.board = presenter?.getBoard(withIndex: boardIndex)
         tableView.reloadData()
     }
     
@@ -94,7 +93,7 @@ extension BoardCollectionViewCell: UITableViewDataSource {
         if let cellTitle = board?.items[indexPath.row] {
             cell.setTitle(with: cellTitle)
         }else{
-            cell.setTitle(with: "Coud't set title!")
+            cell.setTitle(with: "Coud't set a title!")
         }
         
         return cell
