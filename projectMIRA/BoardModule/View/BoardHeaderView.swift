@@ -66,7 +66,7 @@ final class BoardHeaderView: UITableViewHeaderFooterView {
 private extension BoardHeaderView {
     func setupView() {
         
-        contentView.addSubViews([addButton])
+        contentView.addSubviews([addButton])
     }
     
     func setConatraints() {
