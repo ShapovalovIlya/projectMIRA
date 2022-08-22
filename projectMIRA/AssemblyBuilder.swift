@@ -26,8 +26,13 @@ final class AssemblyBuilder: AssemblyBuilderProtocol {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
-        let view = MainCollectionViewController(collectionViewLayout: layout)
-        let presenter = MainViewPresenter(router: router)
+        let view = BoardCollectionViewController(collectionViewLayout: layout)
+        let boardCollectionViewCell = BoardCollectionViewCell()
+        let presenter = BoardViewPresenter(
+            router: router,
+            boardCollectionViewCell: boardCollectionViewCell
+        )
+        
         view.presenter = presenter
         return view
     }

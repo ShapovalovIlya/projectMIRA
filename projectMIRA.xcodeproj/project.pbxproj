@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		86421CB22898354000EA5233 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB12898354000EA5233 /* AssemblyBuilder.swift */; };
 		86421CB42898356700EA5233 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB32898356700EA5233 /* Router.swift */; };
-		86421CB82898373700EA5233 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB72898373700EA5233 /* MainViewPresenter.swift */; };
+		86421CB82898373700EA5233 /* BoardViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CB72898373700EA5233 /* BoardViewPresenter.swift */; };
 		86421CC0289844D700EA5233 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CBF289844D700EA5233 /* WelcomeViewController.swift */; };
 		86421CC22898450600EA5233 /* WelcomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86421CC12898450600EA5233 /* WelcomeViewPresenter.swift */; };
 		864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BCB28930C950043ABA9 /* AppDelegate.swift */; };
@@ -20,12 +20,13 @@
 		864D8BED28930C990043ABA9 /* projectMIRAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BEC28930C990043ABA9 /* projectMIRAUITests.swift */; };
 		864D8BEF28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */; };
 		864D8BFE289317870043ABA9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFD289317870043ABA9 /* Board.swift */; };
-		864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */; };
+		864D8C0028931A040043ABA9 /* BoardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8BFF28931A040043ABA9 /* BoardCollectionViewController.swift */; };
 		864D8C03289325080043ABA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 864D8C02289325080043ABA9 /* README.md */; };
 		864D8C05289337A30043ABA9 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C04289337A30043ABA9 /* BoardCollectionViewCell.swift */; };
 		864D8C0728933C250043ABA9 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */; };
 		864D8C0928933C470043ABA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0828933C470043ABA9 /* Constants.swift */; };
 		864D8C0D289344230043ABA9 /* BoardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0C289344230043ABA9 /* BoardHeaderView.swift */; };
+		8687806C28B31DC1006960A4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687806B28B31DC1006960A4 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 /* Begin PBXFileReference section */
 		86421CB12898354000EA5233 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		86421CB32898356700EA5233 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		86421CB72898373700EA5233 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		86421CB72898373700EA5233 /* BoardViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewPresenter.swift; sourceTree = "<group>"; };
 		86421CBF289844D700EA5233 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		86421CC12898450600EA5233 /* WelcomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewPresenter.swift; sourceTree = "<group>"; };
 		864D8BC828930C950043ABA9 /* projectMIRA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectMIRA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,13 +64,14 @@
 		864D8BEC28930C990043ABA9 /* projectMIRAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectMIRAUITests.swift; sourceTree = "<group>"; };
 		864D8BEE28930C990043ABA9 /* projectMIRAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectMIRAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		864D8BFD289317870043ABA9 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		864D8BFF28931A040043ABA9 /* BoardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewController.swift; sourceTree = "<group>"; };
 		864D8C0128931FB40043ABA9 /* projectMIRA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = projectMIRA.entitlements; sourceTree = "<group>"; };
 		864D8C02289325080043ABA9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		864D8C04289337A30043ABA9 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 		864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		864D8C0828933C470043ABA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		864D8C0C289344230043ABA9 /* BoardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardHeaderView.swift; sourceTree = "<group>"; };
+		8687806B28B31DC1006960A4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,20 +99,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		86421CB52898363200EA5233 /* MainModule */ = {
+		86421CB52898363200EA5233 /* BoardModule */ = {
 			isa = PBXGroup;
 			children = (
 				864D8BFB289316F00043ABA9 /* Model */,
 				864D8BFC289317080043ABA9 /* View */,
 				86421CB62898370B00EA5233 /* Presenter */,
 			);
-			path = MainModule;
+			path = BoardModule;
 			sourceTree = "<group>";
 		};
 		86421CB62898370B00EA5233 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				86421CB72898373700EA5233 /* MainViewPresenter.swift */,
+				86421CB72898373700EA5233 /* BoardViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -180,7 +182,8 @@
 				86421CB12898354000EA5233 /* AssemblyBuilder.swift */,
 				86421CB32898356700EA5233 /* Router.swift */,
 				86421CBA2898446100EA5233 /* WelcomeModule */,
-				86421CB52898363200EA5233 /* MainModule */,
+				86421CB52898363200EA5233 /* BoardModule */,
+				8687806A28B31D98006960A4 /* Extensions */,
 				86421CB92898430000EA5233 /* Resourses */,
 				864D8BD928930C990043ABA9 /* Info.plist */,
 			);
@@ -216,11 +219,19 @@
 			isa = PBXGroup;
 			children = (
 				864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */,
-				864D8BFF28931A040043ABA9 /* MainCollectionViewController.swift */,
+				864D8BFF28931A040043ABA9 /* BoardCollectionViewController.swift */,
 				864D8C0C289344230043ABA9 /* BoardHeaderView.swift */,
 				864D8C04289337A30043ABA9 /* BoardCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8687806A28B31D98006960A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8687806B28B31DC1006960A4 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,8 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				864D8C0028931A040043ABA9 /* MainCollectionViewController.swift in Sources */,
-				86421CB82898373700EA5233 /* MainViewPresenter.swift in Sources */,
+				864D8C0028931A040043ABA9 /* BoardCollectionViewController.swift in Sources */,
+				86421CB82898373700EA5233 /* BoardViewPresenter.swift in Sources */,
+				8687806C28B31DC1006960A4 /* UIView+.swift in Sources */,
 				864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */,
 				86421CC22898450600EA5233 /* WelcomeViewPresenter.swift in Sources */,
 				86421CB42898356700EA5233 /* Router.swift in Sources */,

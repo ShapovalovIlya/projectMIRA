@@ -11,7 +11,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.isTranslucent = false
+        navigationBarAppearance.clipsToBounds = false
+        
+        let titleTextAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.systemBlue]
+        
+        navigationBarAppearance.setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.defaultPrompt)
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.barTintColor = UIColor.white
+        navigationBarAppearance.titleTextAttributes = titleTextAttributes
+        navigationBarAppearance.tintColor = UIColor.systemBlue
+        
         return true
     }
 

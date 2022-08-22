@@ -9,23 +9,22 @@ import UIKit
 
 final class BoardTableViewCell: UITableViewCell {
     
-    private let cellTitle: UILabel = {
+    private let tableCellTitle: UILabel = {
         let label = UILabel()
         label.text = "I'm Title!"
         label.textColor = .black
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let cellContent: UILabel = {
+    private let tableCellContent: UILabel = {
         let label = UILabel()
         label.text = "I'm Content!"
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -40,8 +39,6 @@ final class BoardTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-      //  setupCell()
-       // setConstraints()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,29 +47,35 @@ final class BoardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func setupCell() {
-        backgroundColor = .white
-        addSubview(cellTitle)
-        addSubview(cellContent)
+    //MARK: - Public methods
+    func setTitle(with title: String) {
+        tableCellTitle.text = title
     }
-
+  
 }
 
-//MARK: - Set Constraints
+//MARK: - Private Extension
 private extension BoardTableViewCell {
+    
+    func setupCell() {
+        backgroundColor = .white
+        addSubviews([
+            tableCellTitle,
+            tableCellContent
+        ])
+    }
+    
     func setConstraints() {
         NSLayoutConstraint.activate([
-            cellTitle.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            cellTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            cellTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            cellTitle.heightAnchor.constraint(equalToConstant: frame.height / 2)
-        ])
+            tableCellTitle.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            tableCellTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            tableCellTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            tableCellTitle.heightAnchor.constraint(equalToConstant: frame.height / 2),
         
-        NSLayoutConstraint.activate([
-            cellContent.topAnchor.constraint(equalTo: cellTitle.bottomAnchor, constant: 0),
-            cellContent.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            cellContent.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            cellContent.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            tableCellContent.topAnchor.constraint(equalTo: tableCellTitle.bottomAnchor, constant: 0),
+            tableCellContent.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            tableCellContent.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            tableCellContent.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
     }
 }

@@ -18,17 +18,13 @@ class WelcomeViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 30)
         label.text = "Progect MIRA"
         label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Login"
-        
         textField.backgroundColor = .white
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -36,7 +32,6 @@ class WelcomeViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Password"
         textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -49,7 +44,6 @@ class WelcomeViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -62,7 +56,6 @@ class WelcomeViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         button.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -97,21 +90,22 @@ class WelcomeViewController: UIViewController {
 
 }
 
-//MARK: - Private Extension
+//MARK: - Setup View and Set constraints
 private extension WelcomeViewController {
     
     func setupView() {
         view.backgroundColor = .lightGray
-        view.addSubview(welcomeLabel)
-        view.addSubview(loginTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
-        view.addSubview(registerButton)
+        view.addSubviews([
+            welcomeLabel,
+            loginTextField,
+            passwordTextField,
+            loginButton,
+            registerButton
+        ])
     }
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            
             loginTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginTextField.heightAnchor.constraint(equalToConstant: 40),
