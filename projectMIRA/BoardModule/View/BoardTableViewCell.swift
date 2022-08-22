@@ -14,7 +14,6 @@ final class BoardTableViewCell: UITableViewCell {
         label.text = "I'm Title!"
         label.textColor = .black
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -22,7 +21,6 @@ final class BoardTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "I'm Content!"
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -61,8 +59,10 @@ private extension BoardTableViewCell {
     
     func setupCell() {
         backgroundColor = .white
-        addSubview(tableCellTitle)
-        addSubview(tableCellContent)
+        addSubViews([
+            tableCellTitle,
+            tableCellContent
+        ])
     }
     
     func setConstraints() {

@@ -16,7 +16,6 @@ final class BoardCollectionViewCell: UICollectionViewCell {
     private let tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = .systemBlue
-        table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
@@ -116,7 +115,7 @@ private extension BoardCollectionViewCell {
         tableView.register(BoardTableViewCell.self, forCellReuseIdentifier: K.BoardTableViewCellId)
         tableView.register(BoardHeaderView.self, forHeaderFooterViewReuseIdentifier: K.BoardHeaderViewId)
         tableView.tableFooterView = UIView()
-        addSubview(tableView)
+        addSubViews([tableView])
     }
     
     func setDelegates() {

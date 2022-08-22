@@ -144,7 +144,7 @@ extension BoardCollectionViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - Private Extension
 private extension BoardCollectionViewController {
     func setupView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .lightGray
         self.collectionView!.register(BoardCollectionViewCell.self, forCellWithReuseIdentifier: K.BoardCollectionViewCellId)
     }
     

@@ -17,7 +17,6 @@ final class BoardHeaderView: UITableViewHeaderFooterView {
         button.setTitle("Add", for: .normal)
         button.addTarget(self, action: #selector(addButtonTap), for: .touchUpInside)
         button.backgroundColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -66,7 +65,8 @@ final class BoardHeaderView: UITableViewHeaderFooterView {
 
 private extension BoardHeaderView {
     func setupView() {
-        contentView.addSubview(addButton)
+        
+        contentView.addSubViews([addButton])
     }
     
     func setConatraints() {

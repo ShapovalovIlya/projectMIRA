@@ -26,6 +26,7 @@
 		864D8C0728933C250043ABA9 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */; };
 		864D8C0928933C470043ABA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0828933C470043ABA9 /* Constants.swift */; };
 		864D8C0D289344230043ABA9 /* BoardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D8C0C289344230043ABA9 /* BoardHeaderView.swift */; };
+		8687806C28B31DC1006960A4 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8687806B28B31DC1006960A4 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		864D8C0628933C250043ABA9 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		864D8C0828933C470043ABA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		864D8C0C289344230043ABA9 /* BoardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardHeaderView.swift; sourceTree = "<group>"; };
+		8687806B28B31DC1006960A4 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		86421CB52898363200EA5233 /* MainModule */ = {
+		86421CB52898363200EA5233 /* BoardModule */ = {
 			isa = PBXGroup;
 			children = (
 				864D8BFB289316F00043ABA9 /* Model */,
 				864D8BFC289317080043ABA9 /* View */,
 				86421CB62898370B00EA5233 /* Presenter */,
 			);
-			path = MainModule;
+			path = BoardModule;
 			sourceTree = "<group>";
 		};
 		86421CB62898370B00EA5233 /* Presenter */ = {
@@ -180,7 +182,8 @@
 				86421CB12898354000EA5233 /* AssemblyBuilder.swift */,
 				86421CB32898356700EA5233 /* Router.swift */,
 				86421CBA2898446100EA5233 /* WelcomeModule */,
-				86421CB52898363200EA5233 /* MainModule */,
+				86421CB52898363200EA5233 /* BoardModule */,
+				8687806A28B31D98006960A4 /* Extensions */,
 				86421CB92898430000EA5233 /* Resourses */,
 				864D8BD928930C990043ABA9 /* Info.plist */,
 			);
@@ -221,6 +224,14 @@
 				864D8C04289337A30043ABA9 /* BoardCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8687806A28B31D98006960A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8687806B28B31DC1006960A4 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 			files = (
 				864D8C0028931A040043ABA9 /* BoardCollectionViewController.swift in Sources */,
 				86421CB82898373700EA5233 /* BoardViewPresenter.swift in Sources */,
+				8687806C28B31DC1006960A4 /* UIView+.swift in Sources */,
 				864D8BCC28930C950043ABA9 /* AppDelegate.swift in Sources */,
 				86421CC22898450600EA5233 /* WelcomeViewPresenter.swift in Sources */,
 				86421CB42898356700EA5233 /* Router.swift in Sources */,
