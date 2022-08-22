@@ -115,7 +115,7 @@ private extension BoardCollectionViewCell {
         tableView.register(BoardTableViewCell.self, forCellReuseIdentifier: K.BoardTableViewCellId)
         tableView.register(BoardHeaderView.self, forHeaderFooterViewReuseIdentifier: K.BoardHeaderViewId)
         tableView.tableFooterView = UIView()
-        addSubViews([tableView])
+        addSubviews([tableView])
     }
     
     func setDelegates() {

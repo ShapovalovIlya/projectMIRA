@@ -59,7 +59,7 @@ private extension BoardTableViewCell {
     
     func setupCell() {
         backgroundColor = .white
-        addSubViews([
+        addSubviews([
             tableCellTitle,
             tableCellContent
         ])

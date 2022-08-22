@@ -95,7 +95,7 @@ private extension WelcomeViewController {
     
     func setupView() {
         view.backgroundColor = .lightGray
-        view.addSubViews([
+        view.addSubviews([
             welcomeLabel,
             loginTextField,
             passwordTextField,
